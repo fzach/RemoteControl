@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="RemoteControlClient.ChooseVideo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RemoteControlClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid x:Name="ProgressGrid">
+            <ProgressRing x:Name="ProgressRing" HorizontalAlignment="Center" IsActive="False"></ProgressRing>
+        </Grid>
+        <Grid x:Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid x:Name="NavigationGrid" Grid.Row="0" Background="Black">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <AppBarButton Name="ReturnB" Icon="Back" Click="ReturnB_Click"></AppBarButton>
+                    <AppBarButton Name="Synchonize" Icon="Sync" Click="SynchronizeVideos_Click"></AppBarButton>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ListView Name="VideosLB" SelectionChanged="VideosLB_SelectionChanged">
+                </ListView>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
